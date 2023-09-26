@@ -12,11 +12,12 @@ dependencies {
 }
 
 repositories {
-//  mavenCentral()
-    maven {
-        url "http://<Nexus Private IP>:8081/repository/<nexus artifact repository Name>"
-        allowInsecureProtocol true
-    }
+  mavenCentral()
+//    maven {
+//        url "http://<Nexus Private IP>:8081/repository/<nexus artifact repository Name>"
+//	  url "<이전 시간에 생성한 Nexus Repository URL>"
+//        allowInsecureProtocol true
+//    }
 
 }
 
@@ -43,8 +44,8 @@ jib {
         image = 'adoptopenjdk/openjdk11:alpine-jre'
     }
     to {
-        image = '<AWS ECR URL>/<Image Repository Name>'
-        tags = ['<Image Tag Name>']
+        image = '634867130196.dkr.ecr.ap-northeast-2.amazonaws.com/test'
+        tags = ['1.0']
     }
     container {
         entrypoint = ['java', '-Dspring.profiles.active=test', '-jar', 'test-docker-spring-boot-0.0.1-SNAPSHOT.jar']

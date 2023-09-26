@@ -12,12 +12,12 @@ dependencies {
 }
 
 repositories {
-  mavenCentral()
-//    maven {
+//  mavenCentral()
+    maven {
 //        url "http://<Nexus Private IP>:8081/repository/<nexus artifact repository Name>"
-//	  url "<이전 시간에 생성한 Nexus Repository URL>"
-//        allowInsecureProtocol true
-//    }
+	url "http://52.78.142.250:8081/repository/test-docker-nexus-repository-available/"
+        allowInsecureProtocol true
+    }
 
 }
 
